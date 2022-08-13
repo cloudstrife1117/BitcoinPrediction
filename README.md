@@ -13,10 +13,10 @@ Please look into my self implementation of Vision Transformer repository[[2]](#r
 The data is from 29 Aug 2017 to 17 Jun 2022 in the unit of a day, which includes the price, open, high, low and volume. The input takes 7 days of data and output the next day as prediction. There are two models one taking the first 90% of the timeline as training the following 10% as testing, and the other on is taking 80% of the timeline as training, 10% of the following timeline as validation and 10% of the following timeline as testing.<br/>
 1. Below shows the first model that uses 90% of the timeline as training. The orange line is the training data and the green line is the testing data.
   <br/>**90% Model ViT_7_32_V1 Figure:**<br/>
-  ![ViT_7_32_V1.jpeg](Figures/ViT_7_32_V1.jpeg)
+  ![ViT_7_32_V1.jpeg](Figure/ViT_7_32_V1.jpeg)
 2. Below shows the second model that uses 80% of the timeline as training. The orange line is the training data, the green line is the validation data and the red line is the testing data.
   <br/>**80% Model ViT_7_32_Test Figure:**<br/>
-  ![ViT_7_32_Test.jpeg](Figures/ViT_7_32_Test.jpeg)
+  ![ViT_7_32_Test.jpeg](Figure/ViT_7_32_Test.jpeg)
 ## Short Conclusion
 We can see from the results that this model quite acuratly predicts the next day's price using 7 days as input. However, this model has a weakpoint. When it deals with multiple outputs, outputing the next 3 days as example it wouldn't work well. By adding additional n tokens representing the next n days wouldn't work well, it is possible that the learable tokens all pick up the same information so it confuses the model. Here the solution would be using the whole transformer model[[4]](#reference_anchor4), or just the transformer decoder like GPT-2[[5]](#reference_anchor5). Since the transformer decoder has a mask component in the multi-head self-attention, so it takes the input and output one by one and unmask each iteration to let it consider the sequence of the coming data more so it doesn't confuses the model.
 ## Reference
