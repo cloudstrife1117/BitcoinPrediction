@@ -11,10 +11,10 @@ Please look into my self implementation of Vision Transformer repository[[2]](#r
 3. The "MLP head" mentioned in the Vision Transformer paper[[1]](#reference_anchor1) now doesn't ouput with the activation of sigmoid or softmax, it is output using linear activation for continuous values.
 ## Results
 The data is from 29 Aug 2017 to 17 Jun 2022 in the unit of a day, which includes the price, open, high, low and volume. The input takes 7 days of data and output the next day as prediction. There are two models one taking the first 90% of the timeline as training the following 10% as testing, and the other on is taking 80% of the timeline as training, 10% of the following timeline as validation and 10% of the following timeline as testing.<br/>
-1. Below shows the first model that uses 90% of the timeline as training. The orange line is the training data and the green line is the testing data.
+1. Below shows the first model that uses 90% of the timeline as training. The blue line is the ground truth, the orange line is the training data and the green line is the testing data.
   <br/>**90% Model ViT_7_32_V1 Figure:**<br/>
   ![ViT_7_32_V1.jpeg](Figure/ViT_7_32_V1.jpeg)
-2. Below shows the second model that uses 80% of the timeline as training. The orange line is the training data, the green line is the validation data and the red line is the testing data.
+2. Below shows the second model that uses 80% of the timeline as training. The blue line is the ground truth, the orange line is the training data, the green line is the validation data and the red line is the testing data.
   <br/>**80% Model ViT_7_32_Test Figure:**<br/>
   ![ViT_7_32_Test.jpeg](Figure/ViT_7_32_Test.jpeg)
 ## Short Conclusion
